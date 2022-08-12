@@ -71,7 +71,7 @@ function cargarDatos() {
         contentType: "application/json",
         data:  datos,
         dataType: "json",
-        url:   'http://localhost:8080/api/setTurno2',
+        url:   'https://kioskouteq.azurewebsites.net/api/setTurno2',
         type:  'post',
         beforeSend: function () {
                 $("#miturno").html("Turno..");

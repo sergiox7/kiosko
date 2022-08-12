@@ -5,7 +5,7 @@ var turnoProfesor = 0
 
 function cargarDatos() {
     $.ajax({
-        url:   'http://localhost:8080/api/getkiosko',
+        url:   'https://kioskouteq.azurewebsites.net/api/getkiosko',
         type:  'post',
         beforeSend: function () {
         },
@@ -49,7 +49,7 @@ function cargarDatos() {
         contentType: "application/json",
         data:  datos,
         dataType: "json",
-        url:   'http://localhost:8080/api/actualizaturno',
+        url:   'https://kioskouteq.azurewebsites.net/api/actualizaturno',
         type:  'post',
         beforeSend: function () {
         },

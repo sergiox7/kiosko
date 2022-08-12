@@ -1,10 +1,10 @@
 console.log(sessionStorage.getItem('id') )
 if(sessionStorage.getItem('id') == null){
-    location.href ="http://localhost:8080/login.html";
+    location.href ="https://kioskouteq.azurewebsites.net/login.html";
 }else{
     localStorage.removeItem('kiosko')
     $.ajax({
-        url:   'http://localhost:8080/api/getCalificaciones',
+        url:   'https://kioskouteq.azurewebsites.net/api/getCalificaciones',
         type:  'post',
         beforeSend: function () {
             document.querySelector("table tbody").innerHTML = "Cargando...."

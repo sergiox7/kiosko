@@ -3,7 +3,7 @@ function login(){
     var correo = document.getElementById('correo').value
     var password = document.getElementById('pass').value
     $.ajax({
-        url:   'http://localhost:8080/api/profesores',
+        url:   'https://kioskouteq.azurewebsites.net/api/profesores',
         type:  'post',
         beforeSend: function () {
                 $("#boton").html("Procesando, espere por favor...");
@@ -14,7 +14,7 @@ function login(){
                 response.map((usuario,index)=>{
                     if(usuario.correo == correo && usuario.password == password){
                         sessionStorage.setItem('idmaestro', usuario.id);
-                        location.href ="http://localhost:8080/profesorKiosko.html";
+                        location.href ="https://kioskouteq.azurewebsites.net/profesorKiosko.html";
                     }
                 })
         },

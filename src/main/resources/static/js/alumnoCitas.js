@@ -1,6 +1,6 @@
 console.log(sessionStorage.getItem('id') )
 if(sessionStorage.getItem('id') == null){
-    location.href ="http://localhost:8080/login.html";
+    location.href ="https://kioskouteq.azurewebsites.net/login.html";
 }else{
     localStorage.removeItem('kiosko')
     //fecha
@@ -17,7 +17,7 @@ document.getElementById('dia').min=ano+"-"+mes+"-"+dia;
 
 
 $.ajax({
-  url:   'http://localhost:8080/api/optenerProfesor',
+  url:   'https://kioskouteq.azurewebsites.net/api/optenerProfesor',
   type:  'post',
   beforeSend: function () {
       //document.querySelector("table tbody").innerHTML = "Cargando...."
@@ -54,7 +54,7 @@ $.ajax({
 
 function guardarkiosko(idProfesor){
     localStorage.setItem('kiosko', idProfesor)
-    location.href ="http://localhost:8080/alumnoKiosko.html";
+    location.href ="https://kioskouteq.azurewebsites.net/alumnoKiosko.html";
 }
 
 function asignarIdModal(idProfesor){
@@ -85,14 +85,14 @@ function agendarCita(){
       contentType: "application/json",
       data:  datoscita,
       dataType: "json",
-      url:   'http://localhost:8080/api/insertarCita',
+      url:   'https://kioskouteq.azurewebsites.net/api/insertarCita',
       type:  'post',
       beforeSend: function () {
               $("#resultado").html("Procesando, espere por favor...");
       },
       success:  function (response) {
           $("#resultado").html("Notificaciones");
-          location.href ="http://localhost:8080/alumnoCitasAgendadas.html";
+          location.href ="https://kioskouteq.azurewebsites.net/alumnoCitasAgendadas.html";
              
       },
       error : function(xhr, status) {

@@ -3,7 +3,7 @@ function login(){
     var correo = document.getElementById('correo').value
     var password = document.getElementById('pass').value
     $.ajax({
-        url:   'http://localhost:8080/api/loginAlumno',
+        url:   'https://kioskouteq.azurewebsites.net/api/loginAlumno',
         type:  'post',
         beforeSend: function () {
                 $("#boton").html("Procesando, espere por favor...");
@@ -14,7 +14,7 @@ function login(){
                 response.map((usuario,index)=>{
                     if(usuario.correo == correo && usuario.password == password){
                         sessionStorage.setItem('id', usuario.matricula);
-                        location.href ="http://localhost:8080/alumnoCalificaciones.html";
+                        location.href ="https://kioskouteq.azurewebsites.net/alumnoCalificaciones.html";
                     }
                 })
         },
