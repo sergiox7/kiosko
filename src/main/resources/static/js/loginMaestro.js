@@ -17,8 +17,8 @@ function login(){
                         location.href ="https://kioskouteq.azurewebsites.net/profesorKiosko.html";
                         exitoso = 1;
                     }
-                    console.log(` ${response.length} ${index}`)
-                    if(response.length == index + 1){
+                    console.log(` ${response.length} ${index + 1}`)
+                    if(response.length == index + 1 && exitoso == 0){
                         error()
                     }
                 })
