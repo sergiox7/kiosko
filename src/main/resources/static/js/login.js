@@ -11,24 +11,28 @@ function login(){
         success:  function (response) {
 
                 var exitoso = 0;
-                console.log(response)
+                console.log(response.length)
                 response.map((usuario,index)=>{
                     if(usuario.correo == correo && usuario.password == password){
                         sessionStorage.setItem('id', usuario.matricula);
                         location.href ="https://kioskouteq.azurewebsites.net/alumnoCalificaciones.html";
                         exitoso = 1;
                     }
+                    console.log(` ${response.length} ${index}`)
+                    if(response.length == index){
+                        error()
+                    }
                 })
-                if(exitoso == 0){
-                    alert('Credenciales incorrectas')
-                        $("#boton").html("Iniciar sesión");
-                }
-
         },
         error : function(xhr, status) {
             $("#boton").html("error");
         },
         
     });
+}
+
+function error(){
+    alert('Credenciales incorrectas')
+    $("#boton").html("Iniciar sesión");
 }
 

@@ -10,7 +10,6 @@ function login(){
         },
         success:  function (response) {
             var exitoso = 0;
-                console.log(response)
                 console.log(response.length)
                 response.map((usuario,index)=>{
                     if(usuario.correo == correo && usuario.password == password){
@@ -18,11 +17,11 @@ function login(){
                         location.href ="https://kioskouteq.azurewebsites.net/profesorKiosko.html";
                         exitoso = 1;
                     }
+                    console.log(` ${response.length} ${index}`)
+                    if(response.length == index){
+                        error()
+                    }
                 })
-                console.log(` ${response.length} ${index}`)
-                if(response.length == index){
-                    error()
-                }
         },
         error : function(xhr, status) {
             $("#boton").html("error");
@@ -33,5 +32,5 @@ function login(){
 
 function error(){
     alert('Credenciales incorrectas')
-                    $("#boton").html("Iniciar sesión");
+    $("#boton").html("Iniciar sesión");
 }
