@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas</title>
+    <link rel="stylesheet" href="./lib/bootstrap-5.2.0-dist/css/bootstrap.min.css">
+    <script src="./lib/bootstrap-5.2.0-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./lib/bootstrap-5.2.0-dist/css/_bootswatch.scss">
+    <link rel="stylesheet" href="./lib/bootstrap-5.2.0-dist/css/_variables.scss">
+    <script src="https://kit.fontawesome.com/c5f115c30e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Kiosko Uteq</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:8080/alumnoCalificaciones.html">Calificaciones
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="http://localhost:8080/alumnoCitas.html">Citas
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:8080/alumnoCitasAgendadas.html">Citas agendadas</a>
+          </li>
+
+        </ul>
+        <form class="d-flex">
+          <a href="http://localhost:8080/login.html"><button class="btn btn-secondary my-2 my-sm-0" type="button">Cerrar sesión</button></a>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+    <h1 style="margin-left: 2.5vw; margin-top: 2vh;">Citas</h1>
+
+    <p style="margin-left: 2.5vw; margin-top: 2vh;">Pulsa el botón de calendario para agendar una cita con un profesor</p>
+
+    <table class="table table-hover" style="width: 95vw; margin: auto; margin-top: 5vh;">
+      <thead>
+        <tr class="table-dark">
+          <th scope="col">Materia</th>
+          <th scope="col">Profesor</th>
+          <th scope="col">Acción</th>
+        </tr>
+      </thead>
+       <tbody id="tabla">
+               
+        </tbody>
+      </table>
+            
+      <!-- The Modal -->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Agendar un cita</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+              <input type="hidden" name="" id="profesorId">
+              <input type="date" name="" id="dia"> Día <br>
+              <input type="time" name="" id="hora"> Hora <br>
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="hacercita" onclick="agendarCita()">
+                Hacer cita
+              </button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+<script src="./js/alumnoCitas.js"></script>
+</body>
+</html>
