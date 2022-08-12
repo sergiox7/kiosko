@@ -11,6 +11,7 @@ function login(){
         success:  function (response) {
             var exitoso = 0;
                 console.log(response)
+                console.log(response.length)
                 response.map((usuario,index)=>{
                     if(usuario.correo == correo && usuario.password == password){
                         sessionStorage.setItem('idmaestro', usuario.id);
@@ -18,9 +19,9 @@ function login(){
                         exitoso = 1;
                     }
                 })
-                if(exitoso == 0){
-                    alert('Credenciales incorrectas')
-                        $("#boton").html("Iniciar sesión");
+                console.log(` ${response.length} ${index}`)
+                if(response.length == index){
+                    error()
                 }
         },
         error : function(xhr, status) {
@@ -28,4 +29,9 @@ function login(){
         },
         
     });
+}
+
+function error(){
+    alert('Credenciales incorrectas')
+                    $("#boton").html("Iniciar sesión");
 }
