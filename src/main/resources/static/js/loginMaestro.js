@@ -15,11 +15,14 @@ function login(){
                     if(usuario.correo == correo && usuario.password == password){
                         sessionStorage.setItem('idmaestro', usuario.id);
                         location.href ="https://kioskouteq.azurewebsites.net/profesorKiosko.html";
+                    }else{
+                        alert('Credenciales incorrectas')
+                        $("#boton").html("Iniciar sesión");
                     }
                 })
         },
         error : function(xhr, status) {
-            $("#resultado").html("Hubo un erro vuelve a intentar");
+            $("#boton").html("error");
         },
         
     });
