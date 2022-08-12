@@ -1,3 +1,6 @@
+if(sessionStorage.getItem('id') == null){
+    location.href ="https://kioskouteq.azurewebsites.net/login.html";
+}else{
 var maximoTurno = 0;
 var idKiosko
 var turnoProfesor
@@ -9,7 +12,7 @@ setInterval('cargarDatos()',3000);
 
 function cargarDatos() {
     $.ajax({
-        url:   'http://localhost:8080/api/getTurno',
+        url:   'https://kioskouteq.azurewebsites.net/api/getTurno',
         type:  'post',
         beforeSend: function () {
         },
@@ -85,4 +88,6 @@ function cargarDatos() {
         
     });
   }
+}
+
 
