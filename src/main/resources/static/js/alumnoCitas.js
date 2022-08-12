@@ -54,7 +54,7 @@ $.ajax({
 
 function guardarkiosko(idProfesor){
     localStorage.setItem('kiosko', idProfesor)
-    location.href ="https://kioskouteq.azurewebsites.net/alumnoKiosko.html";
+    location.href ="https://kioskouteq.azurewebsites.net/alumnokiosko.html";
 }
 
 function asignarIdModal(idProfesor){
